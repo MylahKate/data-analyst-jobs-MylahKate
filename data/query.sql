@@ -23,11 +23,10 @@ AND star_rating > '4';*/
 
 /*SELECT COUNT(*)
 FROM data_analyst_jobs
-WHERE review_count > 500
-AND review_count < 1000;*/
---5. 150
+WHERE review_count BETWEEN 500 AND 1000;*/
+--5. 151
 
-/*SELECT AVG(star_rating) AS avg_rating, location AS state
+/*SELECT ROUND(AVG(star_rating), 2) AS avg_rating, location AS state
 FROM data_analyst_jobs
 WHERE star_rating IS NOT NULL
 GROUP BY location
@@ -72,7 +71,7 @@ AND title NOT iLIKE '%Analytics%';*/
 
 /*SELECT domain, COUNT(title) AS total_jobs
 FROM data_analyst_jobs
-WHERE skill LIKE '%SQL%'
+WHERE skill ILIKE '%SQL%'
 AND days_since_posting > 21
 AND domain IS NOT NULL
 GROUP BY domain
